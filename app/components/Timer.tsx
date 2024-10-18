@@ -44,7 +44,7 @@ export default function Timer({ participants, totalTime, onReset }: TimerProps) 
     }
 
     return () => clearInterval(timer)
-  }, [isRunning, timeLeft, currentParticipant, participantTime])
+  }, [isRunning, timeLeft, currentParticipant, participantTime, participants.length])
 
   const handleNext = () => {
     if (currentParticipant < participants.length - 1) {
