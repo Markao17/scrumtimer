@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { GithubIcon } from 'lucide-react'
 
 export default function Footer() {
   return (
@@ -27,6 +28,15 @@ export default function Footer() {
             </Link>
             {' '}team{' '}🎉
           </span>
+          <span className="block sm:inline-block sm:ml-6">
+            <Link
+            href="https://github.com/raulcanodev/scrumtimer"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium hover:underline text-yellow-400 bg-white">
+            <GithubIcon size={18} />
+            </Link>
+    </span>
         </p>
       </div>
     </footer>
