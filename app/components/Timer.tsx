@@ -64,7 +64,7 @@ export default function Timer({ participants, totalTime, onReset }: TimerProps) 
 
   const getTimerColor = () => {
     const percentage = (participantTimeLeft / participantTime) * 100
-    if (percentage > 50) return 'text-white'
+    if (percentage > 50) return 'text-zinc-100'
     if (percentage > 25) return 'text-yellow-500'
     if (percentage > 10) return 'text-orange-500'
     return 'text-red-500'
@@ -73,15 +73,15 @@ export default function Timer({ participants, totalTime, onReset }: TimerProps) 
   return (
     <div className="flex flex-col items-center justify-center space-y-8 w-full h-full">
       {/* Total countdown at the top */}
-      <div className="text-lg font-mono">Total time left: {formatTime(timeLeft)}</div>
+      <div className="text-lg font-mono text-zinc-400">Total time left: {formatTime(timeLeft)}</div>
 
       {/* Main participant timer */}
-      <div className={`text-8xl font-bold ${getTimerColor()}`}>
+      <div className={`text-8xl font-bold text-zinc-50 ${getTimerColor()}`}>
         {formatTime(participantTimeLeft)}
       </div>
 
       {/* Check for participant visibility */}
-      <div className="text-3xl text-white dark:text-white">
+      <div className="text-3xl text-zinc-300">
         {participants.length > 0 && participants[currentParticipant]}
       </div>
 
