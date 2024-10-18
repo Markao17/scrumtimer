@@ -76,7 +76,7 @@ export default function Timer({ participants, totalTime, onReset }: TimerProps) 
       <div className="text-lg font-mono text-zinc-400">Total time left: {formatTime(timeLeft)}</div>
 
       {/* Main participant timer */}
-      <div className={`text-8xl font-bold text-zinc-50 ${getTimerColor()}`}>
+      <div className={`text-8xl font-bold ${getTimerColor()}`}>
         {formatTime(participantTimeLeft)}
       </div>
 
