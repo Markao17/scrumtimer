@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="py-4 fixed bottom-0 left-0 right-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex align-center items-center gap-4 justify-center">
         <p className="text-center text-sm text-zinc-300">
-          Powered by{' '}
+          Powered with 💛 by{' '}
           <Link
             href="https://raulcano.dev"
             target="_blank"
@@ -25,7 +25,7 @@ export default function Footer() {
             >
               WidgiLabs
             </Link>
-            {' '}team{' '}🎉
+            {' '}team
           </span>
 
           {/* GitHub link with aligned icon */}
