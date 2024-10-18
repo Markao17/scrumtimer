@@ -85,7 +85,7 @@ export default function Timer({ participants, totalTime, onReset }: TimerProps) 
         {participants.length > 0 && participants[currentParticipant]}
       </div>
 
-      <div className="space-x-4">
+      <div className="flex flex-col sm:flex-row md:flex-row gap-3 w-full justify-center px-8">
         <Button onClick={() => setIsRunning(!isRunning)} size="lg">
           {isRunning ? 'Pause' : 'Resume'}
         </Button>
