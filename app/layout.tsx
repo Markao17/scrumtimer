@@ -7,7 +7,7 @@ import Footer from './components/Footer'
 const inter = Fira_Code({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Scrum Meeting Timer',
+  title: 'Scrum Timer Online',
   description: 'A timer app for Scrum meetings',
 }
 
