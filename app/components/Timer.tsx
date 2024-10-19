@@ -15,11 +15,13 @@ export default function Timer({ participants, totalTime, onReset }: TimerProps) 
   const [participantTimeLeft, setParticipantTimeLeft] = useState(Math.floor(totalTime / participants.length))
   const [isRunning, setIsRunning] = useState(true)
 
+  // Calculate the time for each participant
   const participantTime = Math.floor(totalTime / participants.length)
 
   useEffect(() => {
     let timer: NodeJS.Timeout
 
+    // Start the timer if it's running and there's still time left
     if (isRunning && timeLeft > 0) {
       timer = setInterval(() => {
         setTimeLeft((prevTotalTime) => {
@@ -30,6 +32,7 @@ export default function Timer({ participants, totalTime, onReset }: TimerProps) 
           return prevTotalTime - 1
         })
 
+        // If the current participant's time is up and there are more participants left
         setParticipantTimeLeft((prevParticipantTime) => {
           if (prevParticipantTime === 1 && currentParticipant < participants.length - 1) {
             setCurrentParticipant((prev) => prev + 1)
@@ -46,6 +49,7 @@ export default function Timer({ participants, totalTime, onReset }: TimerProps) 
     return () => clearInterval(timer)
   }, [isRunning, timeLeft, currentParticipant, participantTime, participants.length])
 
+  // Move to the next participant
   const handleNext = () => {
     if (currentParticipant < participants.length - 1) {
       setCurrentParticipant((prev) => prev + 1)
@@ -56,12 +60,14 @@ export default function Timer({ participants, totalTime, onReset }: TimerProps) 
     }
   }
 
+  // Format the time in MM:SS
   const formatTime = (seconds: number) => {
     const mins = Math.floor(seconds / 60)
     const secs = seconds % 60
     return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`
   }
 
+  // Get the color of the timer based on the time left
   const getTimerColor = () => {
     const percentage = (participantTimeLeft / participantTime) * 100
     if (percentage > 50) return 'text-zinc-100'
