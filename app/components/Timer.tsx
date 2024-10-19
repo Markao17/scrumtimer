@@ -98,8 +98,7 @@ export default function Timer({ participants, totalTime, onReset }: TimerProps) 
         <Button
           onClick={handleNext}
           size="lg"
-          disabled={participantTimeLeft === 0 && currentParticipant === participants.length - 1}
-        >
+          disabled={participantTimeLeft === 0 && currentParticipant === participants.length - 1}>
           {currentParticipant === participants.length - 1 ? 'End' : 'Next'}
         </Button>
         <Button onClick={onReset} variant="outline" size="lg">
