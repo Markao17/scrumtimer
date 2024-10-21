@@ -24,6 +24,8 @@ export default function Timer({ participants, totalTime, onReset }: TimerProps) 
     // Start the timer if it's running and there's still time left
     if (isRunning && timeLeft > 0) {
       timer = setInterval(() => {
+
+        // If the total time is up and there are more participants left
         setTimeLeft((prevTotalTime) => {
           if (prevTotalTime === 1) {
             clearInterval(timer)

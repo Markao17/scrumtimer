@@ -54,7 +54,7 @@ export default function ParticipantForm({ onStart }: ParticipantFormProps) {
       <Image src={Logo} alt="Scrum Timer Logo" width={50} height={50} />
     </div>
     <h1 className="text-2xl md:text-4xl font-bold mb-8">Scrum Timer Online</h1>
-    <form onSubmit={handleSubmit} className="w-full max-w-md space-y-4">
+    <form onSubmit={handleSubmit} className="w-full max-w-md space-y-4 mb-10">
       {names.map((name, index) => (
         <div key={index} className="flex items-center space-x-2">
           <Input
